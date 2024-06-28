@@ -1,0 +1,20 @@
+#!/bin/bash
+## Script for PI cluster symmetry:
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --ntasks=3
+#SBATCH --cpus-per-task=26
+#SBATCH --time=24:00:00
+#SBATCH --output=./out/slurm-%j.out
+
+module load python3
+cd '/home/dpirvu/axion/'
+
+#python3 ./out/script0.py >> ./out/output0.txt &
+#python3 ./out/script1.py >> ./out/output1.txt &
+#wait
+
+python3 ./out/script2.py >> ./out/output2.txt &
+python3 ./out/script3.py >> ./out/output3.txt &
+python3 ./out/script4.py >> ./out/output4.txt &
+wait

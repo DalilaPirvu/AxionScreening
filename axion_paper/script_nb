@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=80
+#SBATCH --time=24:00:00
+#SBATCH -J notebook
+#SBATCH --output=./out/slurm-%j.out
+###SBATCH --mail-user=dpirvu@perimeterinstitute.ca
+
+#jupyter nbconvert --execute polarization_noise.ipynb --to 'html' --ExecutePreprocessor.timeout=-1
+
+#jupyter nbconvert --execute axiontest.ipynb --to 'html' --ExecutePreprocessor.timeout=-1
+
+jupyter nbconvert --execute tauXgal.ipynb --to 'html' --ExecutePreprocessor.timeout=-1

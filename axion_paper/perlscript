@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+for (my $i=0; $i<=75; $i++) {
+    my $infile = "script.py";
+    my $outfile = "./out/script".$i.".py";
+    my $subs = "s/maind=0/maind=".$i."/g";
+    system("cp $infile $outfile");
+    system("perl -i -pe '$subs' $outfile");
+}
